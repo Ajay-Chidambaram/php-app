@@ -3,7 +3,7 @@
 <project name="nation" default="full-suite" basedir=".">
  
     <!-- GLOBAL VARIABLES -->
-    <property name="source" value="app" />
+    <property name="source" value="index" />
     <!-- END -->
  
     <!-- AVAILABLE COMMANDS -->
