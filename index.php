@@ -13,6 +13,32 @@
 
 <body>
 
+      <?php
+            require "config.php";
+            
+            $exists = $connection->query("Select 1 from student_details");
+
+            if($exists !== FALSE)
+            {
+                  echo("This table exists");
+            }else{
+                  echo("This table doesn't exist ");
+
+                  $sql = "CREATE TABLE student_details (
+                              id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+                              name VARCHAR(30) NOT NULL,
+                              email VARCHAR(30) NOT NULL,
+                              department VARCHAR(50),
+                              mobile VARCHAR(50)
+                              )";
+
+                  if (!$connection->query($sql) )
+			{
+    				echo "Table creation failed: (" . $connection->errno . ") " . $connection->error;
+			}
+            }
+            
+      ?>
       <!-- container -->
       <div class="container">
 
@@ -26,8 +52,8 @@
 
       <div class="container">
 
-            <a class='btn btn-primary'>Add New Student Details</a>
-            <a class='btn btn-danger'>Read All Student Details</a>
+            <a href='create.php' class='btn btn-primary'>Add New Details</a>
+            <a href='read.php' class='btn btn-danger'>Read All Details</a>
 
       </div>
 
