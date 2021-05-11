@@ -1,6 +1,6 @@
 <?php
 $mysql_server_name = $_ENV["SERVER"];
-$mysql_user_name = $_ENV["USER"];
+$mysql_user_name = $_ENV["USER_NAME"];
 $mysql_password = $_ENV["PASSWORD"];
 $mysql_db_name = $_ENV["DB_NAME"];
 
