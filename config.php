@@ -4,7 +4,7 @@ $credential_json = file_get_contents('/var/www/html/credentials.json');
 $server_json = file_get_contents('/var/www/html/server_name.json');
 
 $credential_json_data = json_decode($credential_json, true);
-$server_json_data = json_decode($sever_json, true);
+$server_json_data = json_decode($server_json, true);
 
 $secrets = json_decode($credential_json_data["SecretString"], true);
 
