@@ -1,12 +1,14 @@
 <?php
 
-$json = file_get_contents('/var/www/html/credentials.json');
+$credential_json = file_get_contents('/var/www/html/credentials.json');
+$server_json = file_get_contents('/var/www/html/server_name.json');
 
-$json_data = json_decode($json,true);
+$credential_json_data = json_decode($credential_json, true);
+$server_json_data = json_decode($sever_json, true);
 
-$secrets = json_decode($json_data["SecretString"], true);
+$secrets = json_decode($credential_json_data["SecretString"], true);
 
-$mysql_server_name = $secrets["SERVER"];
+$mysql_server_name = $server_json_data["SERVER"];
 $mysql_user_name = $secrets["USER_NAME"];
 $mysql_password = $secrets["PASSWORD"];
 $mysql_db_name = $secrets["DB_NAME"];
